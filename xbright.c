@@ -43,10 +43,14 @@ main(int argc, char **argv)
             case '+': bright_up(++argv[1]); break;
             case '-': bright_down(++argv[1]); break;
             case '=': bright_set(++argv[1]); break;
-            default: usage();
+            case '?':
+                usage();
+                break;
+            default: 
+                get_current();
         }
     } else {
-        usage();
+        get_current();
     }
     return EXIT_SUCCESS;
 }
